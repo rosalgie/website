@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../styling.css" />
+    <title>sam's website — hello, blog</title>
+  </head>
+  <body>
+    <main class="stage">
+      <section class="window window--wide" aria-label="Site window">
+        <header class="window__header">
+          <div class="window__title">
+            <span class="window__titleText">blog post</span>
+          </div>
+
+          <nav class="window__nav" aria-label="Sections">
+            <a class="navItem" href="../../index.html#me">me!</a>
+            <a
+              class="navItem navItem--active"
+              href="../index.html"
+              aria-current="page"
+              >blog</a
+            >
+            <a class="navItem" href="../../index.html#socials">socials</a>
+          </nav>
+        </header>
+
+        <div class="window__body">
+          <article class="post" aria-label="Blog post">
+            <header class="post__header">
+              <h1 class="post__title">hello, blog</h1>
+              <p class="post__subtitle">a quick intro and what i'm building</p>
+              <div class="post__meta">
+                <time datetime="2025-12-26">2025-12-26</time>
+              </div>
+            </header>
+
+            <hr class="post__divider" />
+
+            <div class="post__content">
+              <p>
+                This is a placeholder post so the blog index has real links to
+                click
+              </p>
+
+              <h2>section header</h2>
+              <p>
+                Keep paragraphs short. Use headings to break up long sections.
+                You can also include lists:
+              </p>
+              <ul>
+                <li>simple</li>
+                <li>readable</li>
+                <li>static</li>
+              </ul>
+
+              <h2>code blocks</h2>
+              <pre><code>console.log("hello from a static blog")</code></pre>
+
+              <p>
+                And links look like this:
+                <a href="../index.html">back to the list</a>.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
