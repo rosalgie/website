@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../../../../styling.css" />
+    <title>sam's website — {{ title }}</title>
+  </head>
+  <body>
+    <main class="stage">
+      <section class="window window--wide" aria-label="Site window">
+        <header class="window__header">
+          <div class="window__title">
+            <span class="window__titleText">blog post</span>
+          </div>
+
+          <nav class="window__nav" aria-label="Sections">
+            <a class="navItem" href="../../../../..//index.html#me">me!</a>
+            <a class="navItem navItem--active" href="../../../../../blog/index.html" aria-current="page">blog</a>
+            <a class="navItem" href="../../../../..//index.html#socials">socials</a>
+          </nav>
+        </header>
+
+        <div class="window__body">
+          <article class="post" aria-label="Blog post">
+            <header class="post__header">
+              <h1 class="post__title">{{ title }}</h1>
+              {% if subtitle %}
+              <p class="post__subtitle">{{ subtitle }}</p>
+              {% endif %}
+              <div class="post__meta">
+                <time datetime="{{ date }}">{{ dateDisplay }}</time>
+              </div>
+            </header>
+
+            <hr class="post__divider" />
+
+            <div class="post__content">{{ content }}</div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
