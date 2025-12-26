@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styling.css" />
+    <title>sam's blog</title>
+  </head>
+  <body>
+    <main class="stage">
+      <input class="tab-radio" type="radio" name="tab" id="tab-me" checked />
+      <input class="tab-radio" type="radio" name="tab" id="tab-socials" />
+
+      <section class="window" aria-label="Site window">
+        <header class="window__header">
+          <div class="window__title">
+            <span class="window__titleText">
+              <span class="titleWhen titleWhen--me">me!</span>
+              <span class="titleWhen titleWhen--socials">socials</span>
+            </span>
+          </div>
+
+          <nav class="window__nav" aria-label="Sections">
+            <label class="navItem" for="tab-me">me!</label>
+            <label class="navItem" for="tab-socials">socials</label>
+          </nav>
+        </header>
+
+        <div class="window__body">
+          <section class="panel panel--me" aria-label="Me">
+            <div class="meGrid">
+              <div class="portraitWrap">
+                <div
+                  class="portrait"
+                  role="img"
+                  aria-label="Profile image"
+                ></div>
+                <div class="portraitCaption">
+                  <span class="portraitName">sam</span>
+                  <span class="portraitSep">|</span>
+                  <span class="portraitTimezone">est (utc-5)</span>
+                </div>
+              </div>
+
+              <div class="meText">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                  turpis dui, fermentum nec iaculis nec, ornare sed nisl. Sed
+                  tristique interdum ante sit amet tempor. Donec ut leo euismod,
+                  mollis turpis eu, consequat magna.
+                </p>
+
+                <p>
+                  Praesent iaculis lacus libero, a malesuada augue gravida in.
+                  Praesent nec nulla ornare, consectetur neque non, auctor dui.
+                  Nam vel tempor eros. Aenean posuere metus leo. Mauris
+                  elementum sem odio, et blandit erat aliquet vitae. Aliquam
+                  erat volutpat.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel panel--socials" aria-label="Socials">
+            <div class="socialsTable" role="table" aria-label="Social links">
+              <div class="row" role="row">
+                <div class="key" role="cell">email</div>
+                <div class="val" role="cell">
+                  <a href="mailto:me@samola.net">me@samola.net</a>
+                </div>
+              </div>
+              <div class="row" role="row">
+                <div class="key" role="cell">github</div>
+                <div class="val" role="cell">
+                  <a href="https://github.com/dioxair">dioxair</a>
+                </div>
+              </div>
+              <div class="row" role="row">
+                <div class="key" role="cell">twitter</div>
+                <div class="val" role="cell">
+                  <a href="https://twitter.com/@diodioxair">@diodioxair</a>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
