@@ -115,6 +115,8 @@ p {
 .window__body {
   border-top: 1px solid var(--divider);
   padding: 10px 10px 12px;
+  min-height: 200px;
+  overflow: auto;
 }
 
 .tab-radio {
