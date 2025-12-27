@@ -4,6 +4,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {% if subtitle %}
+    {% assign metaDescription = subtitle %}
+    {% else %}
+    {% assign metaDescription = content | strip_html | strip | truncate: 160 %}
+    {% endif %}
+
+    {% assign siteUrl = "https://samola.net" %}
+
+    {% if image %}
+      {% if image contains "http" %}
+      {% assign metaImage = image %}
+      {% else %}
+      {% assign metaImage = siteUrl | append: image %}
+      {% endif %}
+    {% else %}
+    {% assign metaImage = "https://samola.net/img/pfp.jpg" %}
+    {% endif %}
+
+    <meta name="description" content="{{ metaDescription }}" />
+
+    <link rel="canonical" href="{{ siteUrl }}{{ page.url }}" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="sam's website" />
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:description" content="{{ metaDescription }}" />
+    <meta property="og:url" content="{{ siteUrl }}{{ page.url }}" />
+    <meta property="og:image" content="{{ metaImage }}" />
+    {% if metaImage contains ".png" %}
+    <meta property="og:image:type" content="image/png" />
+    {% elsif metaImage contains ".webp" %}
+    <meta property="og:image:type" content="image/webp" />
+    {% else %}
+    <meta property="og:image:type" content="image/jpeg" />
+    {% endif %}
+
+    <meta property="article:published_time" content="{{ date }}" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="@diodioxair" />
+    <meta name="twitter:site" content="@diodioxair" />
+    <meta name="twitter:title" content="{{ title }}" />
+    <meta name="twitter:description" content="{{ metaDescription }}" />
+    <meta name="twitter:image" content="{{ metaImage }}" />
+
+    <meta name="theme-color" content="#ffdab9" />
     <link rel="stylesheet" href="../../../../../styling.css" />
     <title>sam's website — {{ title }}</title>
   </head>
