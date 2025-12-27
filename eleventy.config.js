@@ -1,5 +1,6 @@
 /** @param {import('@11ty/eleventy/src/UserConfig').default} eleventyConfig */
 import markdownIt from "markdown-it";
+import markdownItFootnote from "markdown-it-footnote";
 
 export default function (eleventyConfig) {
   const md = markdownIt({
@@ -7,6 +8,8 @@ export default function (eleventyConfig) {
     breaks: true,
     linkify: true,
   });
+
+  md.use(markdownItFootnote);
 
   const defaultInlineCodeRenderer = md.renderer.rules.code_inline;
   md.renderer.rules.code_inline = (tokens, idx, options, env, self) => {

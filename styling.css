@@ -455,6 +455,14 @@ button.navItem {
   font-size: 13px;
 }
 
+.post__content img {
+  max-width: 850px;
+}
+
+.post__content video {
+  max-width: 850px;
+}
+
 .post__content blockquote {
   font-style: italic;
   padding-left: 12px;
