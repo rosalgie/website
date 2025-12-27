@@ -455,6 +455,10 @@ button.navItem {
   font-size: 13px;
 }
 
+.post__content li {
+  padding: 3px;
+}
+
 .post__content img {
   max-width: 850px;
 }
