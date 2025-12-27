@@ -41,6 +41,46 @@
   }
 }
 
+:root[data-theme="dark"] {
+  --bg: #040404;
+  --window: #050505;
+  --windowBorder: #1a1a1a;
+  --divider: #262626;
+
+  --windowShadow: 10px 10px 18px rgba(14, 14, 14, 0.6);
+  --softSurface: rgba(0, 0, 0, 0.08);
+
+  --accent: #ffdab9;
+  --text: #fff;
+  --muted: color-mix(in srgb, #fff 72%, #000);
+
+  --link: var(--accent);
+  --linkMuted: color-mix(in srgb, var(--accent) 72%, white);
+
+  --navHoverBg: color-mix(in srgb, var(--accent) 16%, transparent);
+  --navActiveBg: color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+:root[data-theme="light"] {
+  --bg: #fafafa;
+  --window: #fff;
+  --windowBorder: #d6d6d6;
+  --divider: #e7e7e7;
+
+  --windowShadow: 10px 10px 18px rgba(0, 0, 0, 0.1);
+  --softSurface: rgba(0, 0, 0, 0.04);
+
+  --accent: #ffdab9;
+  --text: #101010;
+  --muted: color-mix(in srgb, #000 62%, #fff);
+
+  --link: color-mix(in srgb, var(--accent) 40%, #000);
+  --linkMuted: color-mix(in srgb, var(--accent) 30%, #000);
+
+  --navHoverBg: color-mix(in srgb, var(--accent) 14%, transparent);
+  --navActiveBg: color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -114,6 +154,13 @@ p {
   user-select: none;
   padding: 0 12px;
   text-decoration: none;
+}
+
+button.navItem {
+  background: none;
+  border: 0;
+  font: inherit;
+  color: inherit;
 }
 
 .navItem:visited {
