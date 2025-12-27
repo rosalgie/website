@@ -33,6 +33,7 @@
   <body>
     <main class="stage">
       <input class="tab-radio" type="radio" name="tab" id="tab-me" checked />
+      <input class="tab-radio" type="radio" name="tab" id="tab-projects" />
       <input class="tab-radio" type="radio" name="tab" id="tab-socials" />
 
       <section class="window" aria-label="Site window">
@@ -40,12 +41,14 @@
           <div class="window__title">
             <span class="window__titleText">
               <span class="titleWhen titleWhen--me">me!</span>
+              <span class="titleWhen titleWhen--projects">projects</span>
               <span class="titleWhen titleWhen--socials">socials</span>
             </span>
           </div>
 
           <nav class="window__nav" aria-label="Sections">
             <label class="navItem" for="tab-me">me!</label>
+            <label class="navItem" for="tab-projects">projects</label>
             <a class="navItem" href="blog" aria-label="Open blog">blog</a>
             <label class="navItem" for="tab-socials">socials</label>
             <button class="navItem" type="button" data-theme-toggle>
@@ -94,6 +97,69 @@
             </div>
           </section>
 
+          <section class="panel panel--projects" aria-label="Projects">
+            <div class="blogList" role="list" aria-label="Featured projects">
+              <a
+                class="blogItem"
+                role="listitem"
+                href="https://github.com/dioxair/OpenWallpaperMenu"
+              >
+                <div class="blogItem__main">
+                  <div class="blogItem__title">OpenWallpaperMenu</div>
+                  <div class="blogItem__subtitle">
+                    Interactive Windows 10/11 wallpapers inspired by classic
+                    console UIs (in development)
+                  </div>
+                </div>
+                <div class="blogItem__date" aria-hidden="true">GitHub</div>
+              </a>
+
+              <a
+                class="blogItem"
+                role="listitem"
+                href="https://github.com/dioxair/Nue"
+              >
+                <div class="blogItem__main">
+                  <div class="blogItem__title">Nue</div>
+                  <div class="blogItem__subtitle">
+                    A utility modification for the game Touhou Seirensen ~
+                    Undefined Fantastic Object
+                  </div>
+                </div>
+                <div class="blogItem__date" aria-hidden="true">GitHub</div>
+              </a>
+
+              <a
+                class="blogItem"
+                role="listitem"
+                href="https://findluigi.samola.net"
+              >
+                <div class="blogItem__main">
+                  <div class="blogItem__title">Find Luigi</div>
+                  <div class="blogItem__subtitle">
+                    An online version of the "Wanted!" minigame from Super Mario
+                    64 DS, inspired by the @FindLuigi Twitter account
+                  </div>
+                </div>
+                <div class="blogItem__date" aria-hidden="true">GitHub</div>
+              </a>
+
+              <a
+                class="blogItem"
+                role="listitem"
+                href="https://github.com/dioxair?tab=repositories"
+              >
+                <div class="blogItem__main">
+                  <div class="blogItem__title">More projects</div>
+                  <div class="blogItem__subtitle">
+                    See everything else on my GitHub profile
+                  </div>
+                </div>
+                <div class="blogItem__date" aria-hidden="true">@dioxair</div>
+              </a>
+            </div>
+          </section>
+
           <section class="panel panel--socials" aria-label="Socials">
             <div class="socialsTable" role="table" aria-label="Social links">
               <div class="row" role="row">
@@ -124,9 +190,11 @@
       (function () {
         const hash = (location.hash || "").toLowerCase();
         const tabMe = document.getElementById("tab-me");
+        const tabProjects = document.getElementById("tab-projects");
         const tabSocials = document.getElementById("tab-socials");
 
         if (hash === "#socials" && tabSocials) tabSocials.checked = true;
+        if (hash === "#projects" && tabProjects) tabProjects.checked = true;
         if (hash === "#me" && tabMe) tabMe.checked = true;
       })();
     </script>

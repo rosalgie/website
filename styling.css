@@ -205,6 +205,10 @@ button.navItem {
   display: block;
 }
 
+#tab-projects:checked ~ .window .panel--projects {
+  display: block;
+}
+
 #tab-socials:checked ~ .window .panel--socials {
   display: block;
 }
@@ -217,11 +221,16 @@ button.navItem {
   display: inline;
 }
 
+#tab-projects:checked ~ .window .titleWhen--projects {
+  display: inline;
+}
+
 #tab-socials:checked ~ .window .titleWhen--socials {
   display: inline;
 }
 
 #tab-me:checked ~ .window .window__nav label[for="tab-me"],
+#tab-projects:checked ~ .window .window__nav label[for="tab-projects"],
 #tab-socials:checked ~ .window .window__nav label[for="tab-socials"] {
   color: var(--link);
   background: var(--navActiveBg);
