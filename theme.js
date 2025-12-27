@@ -4,6 +4,12 @@
   const allowedThemes = new Set(["dark", "light"]);
   const modes = ["system", "dark", "light"];
 
+  const HLJS_DARK_HREF =
+    "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/base16/default-dark.css";
+  const HLJS_LIGHT_HREF =
+    "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/base16/default-light.css";
+  const HLJS_LINK_SELECTOR = "link[data-hljs-theme]";
+
   const prefersDarkMql =
     window.matchMedia?.("(prefers-color-scheme: dark)") ?? null;
 
@@ -20,6 +26,14 @@
 
   const getMode = () => getSavedTheme() ?? "system";
   const getEffectiveTheme = () => getSavedTheme() ?? getSystemTheme();
+
+  const syncHighlightTheme = () => {
+    const link = document.querySelector(HLJS_LINK_SELECTOR);
+    if (!link) return;
+
+    const effectiveTheme = getEffectiveTheme();
+    link.href = effectiveTheme === "dark" ? HLJS_DARK_HREF : HLJS_LIGHT_HREF;
+  };
 
   const syncButtons = () => {
     const mode = getMode();
@@ -55,16 +69,19 @@
     }
 
     syncButtons();
+    syncHighlightTheme();
   };
 
   // apply saved theme immediate to avoid flash when user has a preference).
   {
     const saved = getSavedTheme();
     if (saved) root.dataset.theme = saved;
+    syncHighlightTheme();
   }
 
   const init = () => {
     syncButtons();
+    syncHighlightTheme();
 
     for (const button of document.querySelectorAll("[data-theme-toggle]")) {
       button.addEventListener("click", () => {
@@ -78,7 +95,10 @@
     // if no saved theme, keep the label/aria in sync with system theme changes.
     if (prefersDarkMql && !getSavedTheme()) {
       const handler = () => {
-        if (!getSavedTheme()) syncButtons();
+        if (!getSavedTheme()) {
+          syncButtons();
+          syncHighlightTheme();
+        }
       };
 
       prefersDarkMql.addEventListener?.("change", handler);

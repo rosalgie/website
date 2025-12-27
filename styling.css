@@ -18,6 +18,8 @@
 
   --navHoverBg: color-mix(in srgb, var(--accent) 16%, transparent);
   --navActiveBg: color-mix(in srgb, var(--accent) 22%, transparent);
+
+  --codeBlockBg: #181818;
 }
 
 @media (prefers-color-scheme: light) {
@@ -38,6 +40,8 @@
 
     --navHoverBg: color-mix(in srgb, var(--accent) 14%, transparent);
     --navActiveBg: color-mix(in srgb, var(--accent) 18%, transparent);
+
+    --codeBlockBg: #e7e7e7;
   }
 }
 
@@ -59,6 +63,8 @@
 
   --navHoverBg: color-mix(in srgb, var(--accent) 16%, transparent);
   --navActiveBg: color-mix(in srgb, var(--accent) 22%, transparent);
+
+  --codeBlockBg: #181818;
 }
 
 :root[data-theme="light"] {
@@ -79,6 +85,8 @@
 
   --navHoverBg: color-mix(in srgb, var(--accent) 14%, transparent);
   --navActiveBg: color-mix(in srgb, var(--accent) 18%, transparent);
+
+  --codeBlockBg: #e7e7e7;
 }
 
 * {
@@ -423,12 +431,6 @@ button.navItem {
   letter-spacing: 0.2px;
 }
 
-.post__content ul,
-.post__content ol {
-  margin: 0 0 12px;
-  padding-left: 18px;
-}
-
 .post__content a {
   color: var(--link);
   text-decoration: none;
@@ -438,14 +440,28 @@ button.navItem {
   text-decoration: underline;
 }
 
-.post__content pre {
-  margin: 0 0 12px;
-  padding: 10px;
-  background: var(--softSurface);
-  overflow: auto;
-}
-
-.post__content code {
+.post__content pre code {
+  background-color: var(--codeBlockBg);
   font-family: "JetBrains Mono", monospace;
   font-size: 13px;
+}
+
+.post__content code.md-inline {
+  font-family: "JetBrains Mono", monospace;
+  margin: 4px;
+  padding: 2px;
+  background-color: var(--codeBlockBg);
+  border: 1px solid var(--windowBorder);
+  font-size: 13px;
+}
+
+.post__content blockquote {
+  font-style: italic;
+  padding-left: 12px;
+  border-left: 3px solid var(--divider);
+  color: var(--muted);
+}
+
+.post__content blockquote > :last-child {
+  margin-bottom: 0;
 }
