@@ -10,8 +10,10 @@
   --accent: #ffdab9;
   --text: #fff;
   --muted: color-mix(in srgb, #fff 72%, #000);
+
   --link: var(--accent);
   --linkMuted: color-mix(in srgb, var(--accent) 72%, white);
+
   --navHoverBg: color-mix(in srgb, var(--accent) 16%, transparent);
   --navActiveBg: color-mix(in srgb, var(--accent) 22%, transparent);
 }
@@ -235,6 +237,10 @@ p {
   padding-top: 2px;
 }
 
+.meText a {
+  color: var(--muted);
+}
+
 .socialsTable {
   display: grid;
   gap: 6px;
@@ -260,8 +266,6 @@ p {
 .val a {
   color: var(--muted);
 }
-
-/* Blog */
 
 .blog__heading {
   margin: 2px 0 10px;
@@ -321,8 +325,6 @@ p {
     justify-self: start;
   }
 }
-
-/* Post */
 
 .post__header {
   padding-bottom: 6px;
