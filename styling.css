@@ -102,8 +102,15 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto",
-    "Helvetica Neue", Arial, sans-serif;
+  font-family:
+    "Inter",
+    "Segoe UI",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Roboto",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
   line-height: 1.35;
 }
 
@@ -425,10 +432,15 @@ button.navItem {
   margin: 0 0 10px;
 }
 
+.post__content h1 {
+  margin: 22px 0 10px;
+  font-size: 32px;
+  letter-spacing: 0.2px;
+}
+
 .post__content h2,
 .post__content h3 {
   margin: 18px 0 8px;
-  font-weight: 800;
   letter-spacing: 0.2px;
 }
 
