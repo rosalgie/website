@@ -114,6 +114,11 @@ body {
   line-height: 1.35;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 p {
   margin: 0 0 8px;
 }
@@ -256,6 +261,35 @@ button.navItem {
   grid-template-columns: 140px 1fr;
   gap: 10px;
   align-items: start;
+}
+
+@media (max-width: 720px) {
+  .stage {
+    padding: 12px;
+  }
+
+  .window__header {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .window__title {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .window__nav {
+    flex: 1 1 100%;
+    flex-wrap: wrap;
+  }
+
+  .meGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .portraitCaption {
+    white-space: normal;
+  }
 }
 
 .portraitWrap {
@@ -473,11 +507,31 @@ button.navItem {
 }
 
 .post__content img {
-  max-width: 850px;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .post__content video {
-  max-width: 850px;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.post__content iframe {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+.post__content pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.post__content {
+  overflow-wrap: anywhere;
 }
 
 .post__content blockquote {
