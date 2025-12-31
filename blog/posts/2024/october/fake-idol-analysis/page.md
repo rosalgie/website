@@ -176,6 +176,8 @@ Who is the "somebody whispering"? In my opinion, it's her own voice, in a state 
 > ただ普通に生きることを (If we're just living our normal lives)
 > 幸せって言うのかな" (Would I say that I'm happy then?")
 
+The parasocial relationship is exposed as mutual ignorance. The fans know nothing real about her. She knows nothing real about them. The "love" between them is just a transaction with no actual intimacy. And somewhere, underneath all the performance, is a person who just wants to live a normal life, something that has become permanently inaccessible.
+
 # The Third Chorus
 
 > さよならはまだ… (It's not yet time to say goodbye…)
