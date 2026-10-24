@@ -29,7 +29,7 @@ Before I start, I recommend that you watch the MV (music video) in full first (i
 
 # Opening
 
-![Opening image](/public/2024/october/fake-idol-analysis/title-image.png)
+<img src="/public/2024/october/fake-idol-analysis/title-image.png" alt="Opening image" loading="eager">
 
 The MV doesn't ease us in gently. As the first major note plays, we see the idol collapsed on the ground, surrounded by the objects that define her entire existence:
 

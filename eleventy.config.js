@@ -1,6 +1,7 @@
 /** @param {import('@11ty/eleventy/src/UserConfig').default} eleventyConfig */
 import markdownIt from "markdown-it";
 import markdownItFootnote from "markdown-it-footnote";
+import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
 export default function (eleventyConfig) {
   const md = markdownIt({
@@ -21,6 +22,20 @@ export default function (eleventyConfig) {
   };
 
   eleventyConfig.setLibrary("md", md);
+
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    formats: ["avif", "webp", "auto"],
+    widths: [480, 960, 1600, "auto"],
+    urlPath: "/img/opt/",
+    outputDir: "./_site/img/opt/",
+    htmlOptions: {
+      imgAttributes: {
+        loading: "lazy",
+        decoding: "async",
+        sizes: "(max-width: 800px) 100vw, 800px",
+      },
+    },
+  });
 
   eleventyConfig.addPassthroughCopy("styling.css");
   eleventyConfig.addPassthroughCopy("theme.js");
