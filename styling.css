@@ -462,19 +462,27 @@ button.navItem {
   margin: 10px 0 12px;
 }
 
+.post {
+  max-width: calc(68ch + 24px);
+  margin: 0 auto;
+  padding: 8px 12px;
+}
+
 .post__content p {
-  margin: 0 0 10px;
+  margin: 0 0 1.1em;
 }
 
 .post__content h1 {
-  margin: 22px 0 10px;
+  margin: 1.5em 0 0.5em;
   font-size: 32px;
+  line-height: 1.2;
   letter-spacing: 0.2px;
 }
 
 .post__content h2,
 .post__content h3 {
-  margin: 18px 0 8px;
+  margin: 2em 0 0.5em;
+  line-height: 1.25;
   letter-spacing: 0.2px;
 }
 
@@ -495,15 +503,16 @@ button.navItem {
 
 .post__content code.md-inline {
   font-family: "JetBrains Mono", monospace;
-  margin: 4px;
-  padding: 2px;
-  background-color: var(--codeBlockBg);
-  border: 1px solid var(--windowBorder);
-  font-size: 13px;
+  padding: 0.1em 0.35em;
+  color: var(--text);
+  background-color: color-mix(in srgb, var(--text) 12%, var(--window));
+  border: 1px solid color-mix(in srgb, var(--text) 24%, var(--window));
+  border-radius: 4px;
+  font-size: 0.85em;
 }
 
 .post__content li {
-  padding: 3px;
+  margin-bottom: 0.4em;
 }
 
 .post__content img {
@@ -531,7 +540,10 @@ button.navItem {
 }
 
 .post__content {
-  overflow-wrap: anywhere;
+  font-size: 17px;
+  line-height: 1.65;
+  color: color-mix(in srgb, var(--text) 88%, var(--bg));
+  overflow-wrap: break-word;
 }
 
 .post__content blockquote {
